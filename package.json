@@ -1,0 +1,23 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Hello World --- Simple html/css/js boilerplate to test or prototype with.",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "normalize.css.styl": "^4.1.1",
+    "stylus-case": "github:a-marquez/stylus-case",
+    "stylus-normalize.css-wrapper": "^1.0.0",
+    "utilus": "^2.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.7.1",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

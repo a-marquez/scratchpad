@@ -1,0 +1,106 @@
+html
+  head
+    link(rel='stylesheet' href='./main.styl')
+  body
+    div.component-list
+
+      div.component-container
+        header
+          div Gistlets
+          div Sign In
+
+        section
+          section.tab-list
+            button.tab--active Saved
+            button.tab Personal
+            button.tab Search
+
+        section
+          section
+              div.gistlet
+                div
+                  | [author]/[gist name]/[filename]
+                div [current location match] regex [edit:hover] [delete:hover]
+
+        footer: a(href='/') source
+
+      div.component-container
+        header
+          div Gistlets
+          div Sign In
+
+        section
+          section.tab-list
+            button.tab Saved
+            button.tab--active Personal
+            button.tab Search
+
+        section
+          section Public
+          section Private
+          section Starred
+
+      div.component-container
+        header
+          div Gistlets
+          div Sign In
+
+        section
+          section.tab-list
+            button.tab Saved
+            button.tab Personal
+            button.tab--active Search
+
+        section
+          section.tab-content
+            div.search
+              form
+                input(placeholder='Search Gists...')
+              div [#results]
+            div.gist-list
+              div.gist
+                div
+                  button expand
+                  | [author]/[gist name]
+                div
+                  | [filetypes] [#files]
+                  button #stars
+                  button #forks
+                  button source:hover
+                div.files-list
+                  div.file
+                    div [filename]
+                    div
+                      | [file type]
+                      button save
+                      button preview:hover
+              div.gist
+                div a-marquez/value-pre
+                div js,json 3 Files 0 Stars
+                div.files-list
+                  div.file
+                    div ValuePre.js
+                    div
+                      | js
+                      button save
+                  div.file
+                    div package.json
+                    div
+                      | json
+                      button(disabled) save
+              div.gist
+                div paulirish/bling.js
+                div js 3 Files 0 Stars
+              div.gist
+                div foo/bar
+                div css 1 Files 99 Stars
+
+          footer.pagination
+            | Page
+            button prev
+            button 1
+            button 2
+            button 3
+            | ...
+            button 35
+            button next
