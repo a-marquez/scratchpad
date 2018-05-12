@@ -1,0 +1,26 @@
+{
+  "name": "scratchpad",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.8.1",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-marquez/scratchpad.git"
+  },
+  "author": "Albert Marquez (https://github.com/a-marquez)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-marquez/scratchpad/issues"
+  },
+  "homepage": "https://github.com/a-marquez/scratchpad#readme"
+}
