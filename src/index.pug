@@ -7,7 +7,7 @@ mixin feather-svg(name)
     stroke-width='2'
     stroke-linecap='round'
     stroke-linejoin='round'
-  ).icon
+  )
     use(xlink:href='../node_modules/feather-icons/dist/feather-sprite.svg#' + name)
 
 mixin timerBody
@@ -22,8 +22,10 @@ mixin timerBody
         span.timer__counter__label M
         span.timer__counter__digit 38
         span.timer__counter__label S
-      button
-        +feather-svg('play')
+      div.grid
+        button.timer__toggle
+          +feather-svg('play')
+          //- +feather-svg('pause')
 
 html
   head
@@ -48,7 +50,7 @@ html
           +timerBody
 
           footer.timer__control
-            span: button: +feather-svg('copy')
-            span: button: +feather-svg('rotate-cw')
-            span: button: +feather-svg('edit-2')
+            button: +feather-svg('copy')
+            button: +feather-svg('rotate-cw')
+            button: +feather-svg('edit-2')
 
