@@ -1,0 +1,60 @@
+mixin feather-svg(name)
+  svg(
+    width='24'
+    height='24'
+    fill='none'
+    stroke='currentColor'
+    stroke-width='2'
+    stroke-linecap='round'
+    stroke-linejoin='round'
+  ).icon
+    use(xlink:href='../node_modules/feather-icons/dist/feather-sprite.svg#' + name)
+
+mixin timerBody
+  section.timer__body
+    header.padding timer name
+    div.timer__progress(style='border: 1px solid grey')
+    div.padding(style='display: grid; grid-template-columns: 1fr auto;')
+      div(style='font-size: 3em; text-align:center; display: grid; grid-template-columns: repeat(8, 1fr);')
+        span 03
+        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') H
+        span 08
+        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') M
+        span 38
+        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') S
+      button
+        +feather-svg('play-circle')
+
+html
+  head
+    link(rel='stylesheet' href='./main.styl')
+
+  body
+    // include ../node_modules/feather-icons/dist/feather-sprite.svg
+
+    div.component-list
+
+      div.component-container
+        div.timer
+          +timerBody
+
+      div.component-container
+        div.timer--expanded
+          header.control(style='text-align: right;')
+            button
+              +feather-svg('copy')
+            button
+              +feather-svg('bookmark')
+            button
+              +feather-svg('x')
+
+          +timerBody
+
+          footer.control(style='display: grid; grid-template-columns: 1fr 1fr 1fr;')
+            div(style='text-align: left'): button
+              +feather-svg('edit-2')
+            div(style='text-align: center'): button
+              +feather-svg('rotate-ccw')
+            div(style='text-align: right'): button
+              +feather-svg('bell')
+
