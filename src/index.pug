@@ -12,25 +12,25 @@ mixin feather-svg(name)
 
 mixin timerBody
   section.timer__body
-    header.padding timer name
-    div.timer__progress(style='border: 1px solid grey')
-    div.padding(style='display: grid; grid-template-columns: 1fr auto;')
-      div(style='font-size: 3em; text-align:center; display: grid; grid-template-columns: repeat(8, 1fr);')
-        span 03
-        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') H
-        span 08
-        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') M
-        span 38
-        span(style='font-size: 1.5rem; justify-self: start; align-self: center; vertical-align: middle;') S
+    header.timer__header Untitled
+    div: input.timer__duration(type='range')
+    div.timer__body__body
+      div.timer__counter
+        span.timer__counter__digit 03
+        span.timer__counter__label H
+        span.timer__counter__digit 08
+        span.timer__counter__label M
+        span.timer__counter__digit 38
+        span.timer__counter__label S
       button
-        +feather-svg('play-circle')
+        +feather-svg('play')
 
 html
   head
     link(rel='stylesheet' href='./main.styl')
+    link(href='https://fonts.googleapis.com/css?family=Arimo|Yantramanav:100' rel='stylesheet')
 
   body
-    // include ../node_modules/feather-icons/dist/feather-sprite.svg
 
     div.component-list
 
@@ -40,21 +40,15 @@ html
 
       div.component-container
         div.timer--expanded
-          header.control(style='text-align: right;')
-            button
-              +feather-svg('copy')
-            button
-              +feather-svg('bookmark')
-            button
-              +feather-svg('x')
+          header.timer__control
+            button: +feather-svg('bell')
+            button: +feather-svg('star')
+            button: +feather-svg('x')
 
           +timerBody
 
-          footer.control(style='display: grid; grid-template-columns: 1fr 1fr 1fr;')
-            div(style='text-align: left'): button
-              +feather-svg('edit-2')
-            div(style='text-align: center'): button
-              +feather-svg('rotate-ccw')
-            div(style='text-align: right'): button
-              +feather-svg('bell')
+          footer.timer__control
+            span: button: +feather-svg('copy')
+            span: button: +feather-svg('rotate-cw')
+            span: button: +feather-svg('edit-2')
 

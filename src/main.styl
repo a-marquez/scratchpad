@@ -36,18 +36,26 @@ div
 
 // utilities
 .padding
-  padding 1em
+  padding 1rem
+
+  &--small
+    padding .5rem
 
 // component
 
-$primary = black
-$secondary = white
+$primary = purple
+$secondary = lightblue
 $tertiary-1 = #DDD
 $border = #DDD
 $box-shadow = 0 2px 15px rgba(0,0,0,0.30)
 
-.timer
-    border 103px solid #DDD !improtatn
+body
+  font-family 'Arimo', sans-serif
+  font-weight regular
+
+button
+  border 0
+  background-color transparent
 
 .timer
   &
@@ -55,17 +63,58 @@ $box-shadow = 0 2px 15px rgba(0,0,0,0.30)
     display grid
 
   &__body
-    border 1px solid #CCC
+    border 1px solid $primary
 
+    &__body
+      @extends .padding
+      display grid
+      grid-template-columns 1fr auto
+
+  &__body
   &--expanded &__body
     width 500px
 
-  &--expanded header
-  &--expanded footer
+  &--expanded &__control
     align-self center
     justify-self center
     width 400px
 
-.control
-  border 1px solid blue
+  &__header
+    padding .5rem 1rem
+    padding-bottom 0em
+
+  &__duration
+    width 100%
+
+  &__counter
+    font-size 3em
+    text-align center
+    display grid
+    grid-template-columns repeat(6, 1fr)
+
+    &__digit
+      font-family Yantramanav, sans-serif
+      justify-self end
+
+    &__label
+      padding-left .5rem
+      font-size 1.25rem
+      justify-self start
+      align-self center
+      vertical-align middle
+
+  &__control
+    border 1px solid $secondary
+    display grid
+    grid-template-columns 1fr 1fr 1fr
+
+    & span
+      text-align center
+
+    & button
+      @extend .padding--small
+
+    & svg
+      stroke $secondary
+
 
